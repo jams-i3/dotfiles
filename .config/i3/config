@@ -217,8 +217,8 @@ mode "resize window" {
 # Autostart applications
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b --respect-prop-shadow &
-exec --no-startup-id libinput-gestures-setup start &
+exec --no-startup-id nitrogen --restore &
+exec --no-startup-id picom --experimental-backends&
 exec --no-startup-id xautolock -detectsleep -time 5 -locker run-lock -killtime 10 -killer "systemctl suspend"
 exec --no-startup-id unclutter &
 exec_always --no-startup-id i3altlayout &
@@ -253,7 +253,7 @@ set $nord-green #a3be8c
 set $nord-pink #b48ead
 
 #class                      border        backgr       text	    indicator   childborder
-client.focused		    $nord-grey1  $nord-grey1  $nord-white1  $nord-frost4  $nord-frost4
+client.focused		    $nord-grey1  $nord-grey1  $nord-white1  $nord-white1  $nord-white1
 client.focused_inactive	    $nord-grey1  $nord-grey1  $nord-white1  $nord-grey4   $nord-grey4
 client.unfocused	    $nord-grey1  $nord-grey1  $nord-white1  $nord-grey4   $nord-grey4
 client.urgent		    $nord-grey1  $nord-grey1  $nord-white1  $nord-pink    $nord-pink
