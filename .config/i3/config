@@ -217,7 +217,7 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id picom --experimental-backends&
-exec --no-startup-id xautolock -detectsleep -time 5 -locker run-lock -killtime 10 -killer "systemctl suspend"
+exec --no-startup-id xautolock -detectsleep -time 5 -locker system-suspend
 exec --no-startup-id unclutter &
 exec --no-startup-id libinput-gestures &
 exec_always --no-startup-id i3altlayout &
