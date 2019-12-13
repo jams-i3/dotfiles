@@ -2,13 +2,14 @@
 ;https://github.com/arcticicestudio/nord
 ;Polar Night
 nord-grey1 = #2e3440
-nord-grey1a = #dd2e3440
+nord-grey1a = #DD2e3440
 nord-grey2 = #3b4252
 nord-grey3 = #434c5e
 nord-grey4 = #4c566a
 
 ;Snow Storm
 nord-white1 = #d8dee9
+nord-white1a = #EEd8dee9
 nord-white2 = #e5e9f0
 nord-white3 = #eceff4
 
@@ -33,14 +34,13 @@ time = %I:%M %P
 date = %a, %b %d/%y
 format = <label>
 label = %{T2}%{T-} %time% on %{T2}%{T-} %date%
-# format-underline = ${colors.nord-frosT2}
 format-padding = 1
 
 
 [module/i3]
 type = internal/i3
 pin-workspaces = true
-format = <label-state>
+format = <label-state> <label-mode>
 label-focused = %index% %icon%
 label-focused-padding = 1 
 label-focused-foreground = ${colors.nord-grey1}
@@ -51,6 +51,10 @@ label-visible = %index% %icon%
 label-visible-padding = 1
 label-urgent = %index% %icon%
 label-urgent-padding = 1
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-foreground = ${colors.nord-grey1}
+label-mode-background = ${colors.nord-white1}
 index-sort = true
 ws-icon-0 = 1;%{T2}%{T-}
 ws-icon-1 = 2;%{T2}%{T-}
@@ -58,12 +62,6 @@ ws-icon-2 = 3;%{T2}%{T-}
 ws-icon-3 = 4;%{T2}%{T-}
 ws-icon-default = %{T2}%{T-}
 
-[module/i3mode]
-type = internal/i3
-format = <label-mode>
-label-mode = %mode%
-label-mode-padding = 2
-label-mode-background = ${colors.nord-grey1}
 
 [module/title]
 type = internal/xwindow
@@ -173,35 +171,34 @@ ramp-2 = %{T2}%{T-}
 
 [module/sep]
 type = custom/text
-content = %{T3}%{F#5e81ac}%{F- T-}
+content = %{T3}%{F#d8dee9}%{F- T-}
 content-padding = 0
 
 [bar/bartop]
 modules-center = title
 modules-right =  date
 modules-left = i3
-height = 22
+height = 24
 radius = 0.0
-width = 1710px
-offset-x = 105px
+width = 1670px
+offset-x = 125px
 offset-y = 8px
 override-redirect = true
 padding = 
 border-size = 5
-border-color = ${colors.nord-white1}
+border-color = ${colors.nord-white1a}
 wm-restack = i3
 background = ${colors.nord-grey1a}
 foreground = ${colors.nord-white1}
 font-0 = Hack Nerd Font:size=12;3
 font-1 = Hack Nerd Font:size=12;3
-font-2 = Hack Nerd Font:size=24;2
 
 [bar/barbottom]
 bottom = true
 modules-center = cpu sep temperature sep memory
 modules-right = backlight sep alsa sep wireless
 modules-left = battery 
-height = 22
+height = 24
 radius = 0.0
 width = ${bar/bartop.width} 
 offset-x = ${bar/bartop.offset-x} 
@@ -212,29 +209,11 @@ tray-padding = 5
 padding-left = 1
 padding-right = 1
 border-size = 5
-border-color = ${colors.nord-white1}
+border-color = ${colors.nord-white1a}
 wm-restack = i3
 background = ${colors.nord-grey1a}
 foreground = ${colors.nord-white1}
 font-0 = Hack Nerd Font:size=12;3
 font-1 = Hack Nerd Font:size=13;3
 font-2 = Hack Nerd Font:size=24;2
-
-[bar/barnotify]
-bottom = false
-modules-center = i3mode
-modules-right = 
-modules-left =
-height = 22
-radius = 0.0
-width = 1420px 
-offset-x = 250px
-offset-y = 8px
-line-size = 2
-border-size = 5
-override-redirect = true
-background = ${colors.clear}
-foreground = ${colors.nord-white1}
-font-0 = Hack Nerd Font:weight=bold:size=12;3
-font-1 = Hack Nerd Font:size=12;3
 
