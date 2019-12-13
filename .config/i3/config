@@ -253,7 +253,7 @@ set $nord-green #a3be8c
 set $nord-pink #b48ead
 
 #class                      border        backgr       text	    indicator   childborder
-client.focused		    $nord-grey1  $nord-grey1  $nord-white1  $nord-white1  $nord-white1
+client.focused		    $nord-grey1  $nord-grey1  $nord-white1  $nord-frost4  $nord-frost4
 client.focused_inactive	    $nord-grey1  $nord-grey1  $nord-white1  $nord-grey4   $nord-grey4
 client.unfocused	    $nord-grey1  $nord-grey1  $nord-white1  $nord-grey4   $nord-grey4
 client.urgent		    $nord-grey1  $nord-grey1  $nord-white1  $nord-pink    $nord-pink
