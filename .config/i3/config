@@ -219,6 +219,7 @@ exec --no-startup-id nitrogen --restore &
 exec --no-startup-id picom --experimental-backends&
 exec --no-startup-id xautolock -detectsleep -time 5 -locker run-lock -killtime 10 -killer "systemctl suspend"
 exec --no-startup-id unclutter &
+exec --no-startup-id libinput-gestures &
 exec_always --no-startup-id i3altlayout &
 exec_always --no-startup-id /home/benjamin/.config/polybar/launch.sh &
 exec --no-startup-id xrandr --setprovideroffloadsink '1 0'
