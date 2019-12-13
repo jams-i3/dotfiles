@@ -1,0 +1,239 @@
+[colors]
+;https://github.com/arcticicestudio/nord
+;Polar Night
+nord-grey1 = #2e3440
+nord-grey2 = #3b4252
+nord-grey3 = #434c5e
+nord-grey4 = #4c566a
+
+;Snow Storm
+nord-white1 = #d8dee9
+nord-white2 = #e5e9f0
+nord-white3 = #eceff4
+
+:Frost
+nord-frost1 = #8fbcbb
+nord-frost2 = #88c0d0
+nord-frost3 = #81a1c1
+nord-frost4 = #5e81ac
+
+:Aurora
+nord-red = #bf616a
+nord-orange = #d08770
+nord-yellow = #ebcb8b
+nord-green = #a3be8c
+nord-pink = #b48ead
+
+clear = #00ffffff
+
+[module/date]
+type = internal/date
+time = %I:%M %P
+date = %a, %b %d/%y
+format = <label>
+label = %{T2}%{T-} %time% on %{T2}%{T-} %date%
+# format-underline = ${colors.nord-frosT2}
+format-padding = 1
+
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+format = <label-state>
+label-focused = %index% %icon%
+label-focused-padding = 1 
+label-focused-foreground = ${colors.nord-white2}
+label-focused-background = ${colors.nord-frost4}
+label-unfocused = %index% %icon%
+label-unfocused-padding = 1
+label-visible = %index% %icon%
+label-visible-padding = 1
+label-urgent = %index% %icon%
+label-urgent-padding = 1
+index-sort = true
+ws-icon-0 = 1;%{T2}%{T-}
+ws-icon-1 = 2;%{T2}%{T-}
+ws-icon-2 = 3;%{T2}%{T-}
+ws-icon-3 = 4;%{T2}%{T-}
+ws-icon-default = %{T2}%{T-}
+
+[module/i3mode]
+type = internal/i3
+format = <label-mode>
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.nord-grey1}
+
+[module/title]
+type = internal/xwindow
+format = <label>
+label = %title%
+label-maxlen = 100
+label-empty =
+
+
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+format-muted = <label-muted>
+label-muted = %{T2}ﱝ%{T-}
+ramp-volume-0 = %{T2}%{T-}
+ramp-volume-1 = %{T2}%{T-}
+ramp-volume-2 = %{T2}墳%{T-}
+
+
+[module/wireless]
+type = internal/network
+interface = "wlp3s0"
+interval = 1
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %{T2}%{T-} %downspeed% %{T2}%{T-} %upspeed%
+label-disconnected = %{T2}睊%{T-}
+label-disconnected-foreground = ${colors.nord-red}
+
+
+[module/backlight]
+type = internal/backlight
+card = gmux_backlight
+format = %{T2}盛%{T-} <label>
+# format-underline = ${colors.nord-yellow}
+format-padding = -1
+label = %percentage%%
+
+
+[module/battery]
+type = internal/battery
+full-at = 100
+battery = BAT0
+adapter = ADP1
+poll-interval = 1
+time-format = %H:%M
+
+label-charging =   %percentage%%
+label-discharging = %percentage%% %{T2}%{T-} %consumption% %{T2}%{T-} %time%
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging> 
+
+ramp-capacity-0 = %{T2}%{F#bf616a}%{F- T-}
+ramp-capacity-1 = %{T2}%{T-}
+ramp-capacity-2 = %{T2}%{T-}
+ramp-capacity-3 = %{T2}%{T-}
+ramp-capacity-4 = %{T2}%{T-}
+ramp-capacity-5 = %{T2}%{T-}
+ramp-capacity-6 = %{T2}%{T-}
+ramp-capacity-7 = %{T2}%{T-}
+ramp-capacity-8 = %{T2}%{T-}
+ramp-capacity-9 = %{T2}%{T-}
+
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = %{T2}%{T-} %percentage%%
+ramp-coreload-spacing = 1
+ramp-coreload-0 = %{T2}▁%{T-} 
+ramp-coreload-1 = %{T2}▂%{T-} 
+ramp-coreload-2 = %{T2}▃%{T-} 
+ramp-coreload-3 = %{T2}▄%{T-} 
+ramp-coreload-4 = %{T2}▅%{T-} 
+ramp-coreload-5 = %{T2}▆%{T-} 
+ramp-coreload-6 = %{T2}▇%{T-} 
+ramp-coreload-7 = %{T2}█%{T-} 
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = %{T2}%{T-} <label>
+label = %gb_used%/16.00 GB
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input
+base-temperature = 55
+warn-temperature = 84
+format = <ramp> <label>
+format-warn = <label-warn>
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.nord-red}
+ramp-0 = %{T2}%{T-}
+ramp-1 = %{T2}%{T-}
+ramp-2 = %{T2}%{T-}
+
+
+[module/sep]
+type = custom/text
+content = %{T3}%{F#5e81ac}%{F- T-}
+content-padding = 0
+
+[bar/bartop]
+modules-center = title
+modules-right =  date
+modules-left = i3
+height = 22
+radius = 0.0
+width = 1710px
+offset-x = 105px
+offset-y = 8px
+override-redirect = true
+padding = 
+border-size = 5
+border-color = ${colors.nord-frost4}
+wm-restack = i3
+background = ${colors.nord-white1}
+foreground = ${colors.nord-grey1}
+font-0 = Hack Nerd Font:size=12;3
+font-1 = Hack Nerd Font:size=12;3
+font-2 = Hack Nerd Font:size=24;2
+
+[bar/barbottom]
+bottom = true
+modules-center = cpu sep temperature sep memory
+modules-right = backlight sep alsa sep wireless
+modules-left = battery 
+height = 22
+radius = 0.0
+width = ${bar/bartop.width} 
+offset-x = ${bar/bartop.offset-x} 
+offset-y = ${bar/bartop.offset-y} 
+override-redirect = true
+tray-position = right
+tray-padding = 5
+padding-left = 1
+padding-right = 1
+border-size = 5
+border-color = ${colors.nord-frost4}
+wm-restack = i3
+background = ${colors.nord-white1}
+foreground = ${colors.nord-grey1}
+font-0 = Hack Nerd Font:size=12;3
+font-1 = Hack Nerd Font:size=13;3
+font-2 = Hack Nerd Font:size=24;2
+
+[bar/barnotify]
+bottom = false
+modules-center = i3mode
+modules-right = 
+modules-left =
+height = 22
+radius = 0.0
+width = 1420px 
+offset-x = 250px
+offset-y = 8px
+line-size = 2
+border-size = 5
+override-redirect = true
+background = ${colors.clear}
+foreground = ${colors.nord-white1}
+font-0 = Hack Nerd Font:weight=bold:size=12;3
+font-1 = Hack Nerd Font:size=12;3
+
