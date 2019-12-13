@@ -33,6 +33,8 @@ POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="000"
 plugins=(gitfast cp sudo dircycle dirhistory zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+
 alias vim="nvim"
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias grub="sudo nvim /etc/default/grub"
