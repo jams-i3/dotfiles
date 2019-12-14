@@ -1,0 +1,45 @@
+#!/bin/bash
+
+RING='#d8dee9ff' #Nord White 1
+INSIDE='#2e3440DD' #Nord Grey 1
+VERIFY='#5e81acff' #Nord Frost 4
+WRONG='#bf616aff' #Nord Red
+FONTCOLOR='#d8dee9ff' #Nord White 1
+KEYHIGHLIGHT='#a3be8cff' #Nord Green
+BACKSPACE='#bf616aff' #Nord Red
+FONT='Hack'
+
+i3lock -e -i /usr/share/backgrounds/screensaver.png \
+	--indicator \
+	--force-clock \
+	--timecolor=$FONTCOLOR \
+	--timestr='Locked' \
+	--datestr='' \
+	--insidevercolor=$VERIFY \
+	--insidewrongcolor=$WRONG \
+	--insidecolor=$INSIDE \
+	--ringvercolor=$RING \
+	--ringwrongcolor=$RING \
+	--ringcolor=$RING \
+	--linecolor=$RING \
+	--keyhlcolor=$KEYHIGHLIGHT \
+	--bshlcolor=$BACKSPACE \
+	--separatorcolor=$RING \
+	--verifcolor=$FONTCOLOR \
+	--wrongcolor=$FONTCOLOR \
+	--timepos='200:1108' \
+	--indpos='100:1100' \
+	--verif-font=$FONT \
+	--wrong-font=$FONT \
+	--time-font=$FONT \
+	--verifsize=24 \
+	--wrongsize=24 \
+	--timesize=24 \
+	--veriftext='' \
+	--wrongtext='' \
+	--noinputtext='' \
+	--lockfailedtext='' \
+	--radius=36 \
+	--ring-width=16 \
+	--verif-align=1 \
+	--wrong-align=1
