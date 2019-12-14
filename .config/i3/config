@@ -23,6 +23,7 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+n exec networkmanager_dmenu
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -no-bold
 
 # Screen brightness controls
 exec --no-startup-id gmux_backlight 204 & # Startup brightness
