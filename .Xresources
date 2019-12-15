@@ -1,10 +1,10 @@
 #define font1 Hack Nerd Font Mono
 
 URxvt*letterSpace:    -1
-*font:                xft:font1:pixelsize=18
-*boldFont:            xft:font1:bold:pixelsize=18
-*italicFont:          xft:font1:italic:pixelsize=18
-*boldItalicFont:      xft:font1:bold:italic:pixelsize=18
+*font:                xft:font1:size=13.5
+*boldFont:            xft:font1:bold:size=13.5
+*italicFont:          xft:font1:italic:size=13.5
+*boldItalicFont:      xft:font1:bold:italic:size=13.5
 
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
