@@ -53,7 +53,7 @@ alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias grub='sudo nvim /etc/default/grub'
 alias journal='sudo journalctl -b -p 3'
 alias prime='DRI_PRIME=1'
-alias neofetch-bong="neofetch --ascii \'\$(fortune|cowthink -f bong -W 30)\'"
+alias neofetch-bong='neofetch --ascii "$(fortune|cowthink -f bong -W 30)"'
 
 alias grep='grep --color=auto'
 
