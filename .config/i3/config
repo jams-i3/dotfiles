@@ -150,6 +150,7 @@ assign [class="Lxappearance"] 5
 assign [class="Feh"] 5
 assign [class="Nitrogen"] 5
 assign [class="Timeshift-gtk"] 5
+assign [class="Steam"] 8
 
 # Open specific applications in floating mode
 for_window [class="Lxappearance"] floating enable  
