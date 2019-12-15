@@ -43,6 +43,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'https://github.com/lambdalisue/suda.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()	
 
