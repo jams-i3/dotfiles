@@ -6,6 +6,10 @@ syntax on
 syntax enable
 set noshowmode
 set clipboard=unnamedplus
+set nobackup
+set noswapfile
+set nowritebackup
+set termguicolors
 
 let g:clipboard = {
   \   'copy': {
