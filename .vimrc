@@ -3,6 +3,7 @@ set number
 set rnu
 set laststatus=2
 syntax on
+syntax enable
 set noshowmode
 set clipboard=unnamedplus
 
@@ -41,9 +42,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'https://github.com/lambdalisue/suda.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'Yggdroot/indentLine'
+Plug 'w0rp/ale'
 
 call plug#end()	
 
@@ -57,4 +59,10 @@ let g:lightline = {
 
 map <C-o> :NERDTreeToggle<CR>
 
-
+" Ale
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {'python': ['flake8']}

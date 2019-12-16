@@ -5,7 +5,7 @@
 set $mod Mod4
 
 # Font for window titles
-font pango:Hack Nerd Font 14
+font pango:FiraCode 14
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
